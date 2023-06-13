@@ -31,7 +31,7 @@ This is a React.js application that allows users to search for repositories on G
  npm install
 ```
 
-3.Run the app
+3.Run the app:
 
 ```bash
     npm run dev

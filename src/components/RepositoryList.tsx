@@ -18,7 +18,7 @@ const RepositoryList: React.FC<RepositoryListProps> = ({ repositories }) => {
 						name={repo.name}
 						forks={repo.forks}
 						stars={repo.forks}
-						url="test"
+						url={repo.html_url}
 						watchers={repo.watchers}
 						key={repo.id}
 					></RepositoryCard>

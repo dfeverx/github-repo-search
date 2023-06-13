@@ -1,7 +1,7 @@
 import React from "react";
 import SearchForm from "./components/SearchForm";
 import RepositoryList from "./components/RepositoryList";
-import { AppBar } from "@mui/material";
+import { AppBar, Box } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchRepositories } from "./store/repositoriesSlice";
 import { RootState } from "./main";
@@ -31,18 +31,19 @@ const App: React.FC = () => {
 
 	return (
 		<div style={{ padding: 32 }}>
-			<AppBar
-				color="default"
-				enableColorOnDark
-				sx={{ pr: 10, pl: 10, pb: 5 }}
-			>
+			<div style={{ padding: 16 }}>
 				<h4>GitHub Repository Search</h4>
 				<SearchForm />
-			</AppBar>
-			{error && <p>{error}</p>}
-			{repositories.length > 0 && (
-				<RepositoryList repositories={repositories} />
-			)}
+			</div>
+			<Box>
+				{error && <p>{error}</p>}
+				{repositories.length > 0 && (
+					<RepositoryList repositories={repositories} />
+				)}
+				{repositories.length == 0 && (
+					<p style={{ textAlign: "center" }}>Try search..</p>
+				)}
+			</Box>
 		</div>
 	);
 };

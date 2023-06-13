@@ -13,7 +13,7 @@ const SearchForm: React.FC = () => {
 
 	return (
 		<Grid container spacing={2}>
-			<Grid item xs={12} sm={8}>
+			<Grid item xs={12} sm={12}>
 				<TextField
 					label="Search repositories"
 					fullWidth
@@ -21,7 +21,7 @@ const SearchForm: React.FC = () => {
 					onChange={(e) => setQuery(e.target.value)}
 				/>
 			</Grid>
-			<Grid item xs={12} sm={4}>
+			<Grid item xs={12}>
 				<Button
 					variant="contained"
 					onClick={handleSearch}
